@@ -48,15 +48,17 @@ function start() {
   var txtField = doc.selection[0];
   var converted = htmlToTextAttr(txtField.getTextString());
   txtField.setTextString(converted.text);
-  var underline = false;
+  var hasUnderline = false;
   for each(var textAttr in converted.textAttrList) {
     if (textAttr.name === 'underline') {
-      underline = true;
+      hasUnderline = true;
       continue;
     }
     txtField.setTextAttr(textAttr.name, textAttr.value, textAttr.startIndex, textAttr.endIndex);
   }
-  alert("Flash can't underline. LULZ.");
+  if (hasUnderline) {
+    alert("Flash can't underline. LULZ.");
+  }
 }
 
 start();
