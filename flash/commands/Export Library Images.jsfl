@@ -14,9 +14,10 @@ function mkdir(item) {
 }
 
 function itemURI(item, defaultExt) {
+  defaultExt = defaultExt || 'png'
 	var uri = "file:///" + exportPath + item.name;
 	if (!/\..*(?=$)/.test(uri)) {
-		uri += '.png';
+		uri += '.' + defaultExt;
 	}
 	return uri;
 }
@@ -24,8 +25,16 @@ function itemURI(item, defaultExt) {
 var item;
 while(items.length) {
 	item = items.shift();
-	if (item.itemType == "bitmap") {
+
+  // exports bitmaps on your library
+  if (item.itemType == "bitmap") {
 		mkdir(item);
-		item.exportToFile(itemURI(item, 'png'), 100);
+    item.exportToFile(itemURI(item), 100);
+	}
+
+  // exports graphics and movieclips that are named with the .png extension
+  if (item.exportToPNGSequence && /\.png$/.test(item.name)) {
+		mkdir(item);
+		item.exportToPNGSequence(itemURI(item));
 	}
 }
