@@ -3,10 +3,9 @@
 Automation scripts I've done, because I like the computer to do all the work.
 
 
+# What?
 
-### Flash Workflow Tip
-If you're on a Mac, use the `Paste HTML as Text` command with the `Copy RTF as HTML` service.
-
+For now, check what you can do with the [Automator Services](https://github.com/blvz/lazy-s/tree/master/mac/services) and with the [Flash commands](https://github.com/blvz/lazy-s/tree/master/flash/commands).
 
 
 # License
