@@ -30,9 +30,9 @@ Select any image on Finder and trigger this service to get a copy converted to J
 Trigger this service on Finder, to `cd` to the current selected directory. If no directory is selected, it'll `cd` to the active window's directory.
 
 
-## Open Root With Atom
+## Open In Atom With Root
 
-The service will try to guess which is the root of the project and open it with Atom.
+The service will open the selected file and guess the root of the project, when opening it with Atom.
 
 
 ## Toggle Hidden Files
