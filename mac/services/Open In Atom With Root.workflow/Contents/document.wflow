@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>set start_path to get_finder_folder()on parent_folder(item_path)	tell application "System Events" to return path of container of disk item (path of disk item (item_path as text))end parent_folderon get_finder_folder()	tell application "Finder"		if length of (get selection) is not 0 then			set selected to item 1 of (get selection)			if class of selected is folder then				return selected			else				return container of selected			end if		end if		return target of front window	end tellend get_finder_folderon get_root(start_path)	repeat with dir in {".git", ".hg", ".svn", ".cvs", "spec", "*.csproj", "*.xcodeproj"}		try			do shell script "ls -d " &amp; ¬				quoted form of POSIX path of ((start_path as text) &amp; dir)			return start_path		end try	end repeat		repeat with f in {"package.json", "bower.json", "gruntfile.js", "setup.py", "Makefile", "Berksfile", "Gemfile", "Rakefile", "Emakefile", "package.exs", "rebar", "Slakefile", "LICENSE", "buildconf", "index.php", ".htaccess"}		try			do shell script "ls -f " &amp; ¬				quoted form of POSIX path of ((start_path as text) &amp; f)			return start_path		end try	end repeat		set parent_path to parent_folder(start_path)	if ((parent_path as text) is not (start_path as text)) then return get_root(parent_path)	return start_pathend get_rootdo shell script "open -a 'Atom' " &amp; quoted form of POSIX path of get_root(start_path)</string>
+					<string>set start_path to get_finder_folder()on parent_folder(item_path)	tell application "System Events" to return path of container of disk item (path of disk item (item_path as text))end parent_folderon get_finder_folder()	tell application "Finder"		if length of (get selection) is not 0 then			set selected to item 1 of (get selection)			if class of selected is folder then				return selected			else				return container of selected			end if		end if		return target of front window	end tellend get_finder_folderon get_root(start_path)	repeat with dir in {".git", ".hg", ".svn", ".cvs", "spec", "*.csproj", "*.xcodeproj"}		try			do shell script "ls -d " &amp; ¬				quoted form of POSIX path of ((start_path as text) &amp; dir)			return start_path		end try	end repeat	repeat with f in {"package.json", "bower.json", "gruntfile.js", "setup.py", "Makefile", "Berksfile", "Gemfile", "Rakefile", "Emakefile", "package.exs", "rebar", "Slakefile", "LICENSE", "buildconf", "index.php", ".htaccess", "*.sublime-project", "manifest.json"}		try			do shell script "ls -f " &amp; ¬				quoted form of POSIX path of ((start_path as text) &amp; f)			return start_path		end try	end repeat	set parent_path to parent_folder(start_path)	if ((parent_path as text) is not (start_path as text)) then return get_root(parent_path)	return start_pathend get_rootdo shell script "open -a 'Atom' " &amp; quoted form of POSIX path of get_root(start_path)</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -87,9 +87,9 @@
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-	
+
 	(* Your script goes here *)
-	
+
 	return input
 end run</string>
 						<key>name</key>
