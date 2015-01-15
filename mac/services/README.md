@@ -16,6 +16,15 @@ background url('../images/picture.png')
 Select any rich text, from your favorite text editor (or even a PDF) and trigger this service to copy it as a basic HTML formatting.
 
 
+## Paste RTF as HTML
+
+With rich text already copied to the clipboard, trigger this service to paste it with basic HTML formatting. The `Copy RTF as HTML` service is preferred over this one, but some apps (like Microsoft PowerPoint) don't expose the selection as RTF, making this workaround necessary.
+
+**Note**: For this service to work, the application in which the copy is being pasted, must be allowed to control the computer. On OS X Yosemite, this can be done in `Settings > Security & Privacy > Privacy > Accessibility`.
+
+This occurs because after converting the clipboard to HTML, the service clicks automatically on the `Edit > Paste` menu item, which works way better than triggering the `Paste` keystroke.
+
+
 ## Duplicate as JPG
 
 Select any image on Finder and trigger this service to get a copy converted to JPG.
