@@ -1,13 +1,13 @@
 # lazy-s
 
-Automation scripts I've done, because I like the computer to do all the work.
+Automate all the things ([almost](http://apple.stackexchange.com/questions/161650/can-i-add-actions-to-control-automator-to-automator)) `&&` [make me a sandwich](http://xkcd.com/149/).
 
 
-# What?
+## So...
 
-For now, check what you can do with the [Automator Services](https://github.com/blvz/lazy-s/tree/master/mac/services) and with the [Flash commands](https://github.com/blvz/lazy-s/tree/master/flash/commands).
+Right now, just a bunch of [Automator Services](https://github.com/blvz/lazy-s/tree/master/mac/services) and a couple of [Flash Commands](https://github.com/blvz/lazy-s/tree/master/flash/commands).
 
 
-# License
+## License
 
-MIT Licensed. Have fun and stuff, just don't claim you're boss and shit like that.
+MIT Licensed. [Read the license](https://github.com/blvz/lazy-s/blob/master/LICENSE).
