@@ -57,7 +57,7 @@ function start() {
     txtField.setTextAttr(textAttr.name, textAttr.value, textAttr.startIndex, textAttr.endIndex);
   }
   if (hasUnderline) {
-    alert("Flash can't underline. LULZ.");
+    fl.trace("Flash can't underline. lulz.");
   }
 }
 
