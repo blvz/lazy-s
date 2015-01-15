@@ -30,9 +30,9 @@ This occurs because after converting the clipboard to HTML, the service clicks a
 Select any number of images and trigger one of these services to get those duplicated and converted to JPG or GIF.
 
 
-## iTerm to Here
+## iTerm To Here
 
-Trigger this service on Finder, to `cd` to the current selected directory. If no directory is selected, it'll `cd` to the active window's directory.
+Trigger this service in Finder to `cd` to the selected folder's path. If no folder is selected, the current window's path will be used.
 
 
 ## Toggle Hidden Files
