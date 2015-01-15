@@ -25,9 +25,9 @@ With rich text already copied to the clipboard, trigger this service to paste it
 This occurs because after converting the clipboard to HTML, the service clicks automatically on the `Edit > Paste` menu item, which works way better than triggering the `Paste` keystroke.
 
 
-## Duplicate as JPG
+## Duplicate as JPG / GIF
 
-Select any image on Finder and trigger this service to get a copy converted to JPG.
+Select any number of images and trigger one of these services to get those duplicated and converted to JPG or GIF.
 
 
 ## iTerm to Here
