@@ -13,7 +13,7 @@ background url('../images/picture.png')
 
 ## Copy RTF as HTML
 
-Select any rich text, from your favorite text editor (or even a PDF) and trigger this service to get the same formatting in HTML on your clipboard.
+Select any rich text, from your favorite text editor (or even a PDF) and trigger this service to copy it as a basic HTML formatting.
 
 
 ## Duplicate as JPG

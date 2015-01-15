@@ -12,6 +12,16 @@
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>Rich Text</string>
+			</dict>
+			<key>NSSendTypes</key>
+			<array>
+				<string>com.apple.flat-rtfd</string>
+				<string>public.rtf</string>
+			</array>
 		</dict>
 	</array>
 </dict>
