@@ -43,3 +43,17 @@ The service will open the selected file and guess the root of the project, when 
 ## Toggle Hidden Files
 
 With Finder opened, trigger this service to toggle hidden files visibility.
+
+
+## Move Selection To New Folder
+
+Trigger this service to group selected Finder items into a new folder.
+
+**Note**: This service uses the `Run JavaScript` action, which is only available on OS X 10.10+.
+
+
+## New Folder Inside Selected Folders
+
+Select any folders in Finder and trigger this service to create new folders inside them. Very useful when organizing files while on _list view_.
+
+**Note**: This service uses the `Run JavaScript` action, which is only available on OS X 10.10+.
