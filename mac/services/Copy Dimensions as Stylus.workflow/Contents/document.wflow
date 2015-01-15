@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>381</string>
+	<string>409.1</string>
 	<key>AMApplicationVersion</key>
-	<string>2.4</string>
+	<string>2.5</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -59,23 +59,27 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>require 'pathname'
-require 'RMagick'
+					<string>files=($@)
+for f in $files
+do
+	[ "$MULTIPLE" ] &amp;&amp; printf "\n"
 
-list = []
-ARGV.each do |f|
-  name = Pathname(f).basename.to_s
-  magick_image = Magick::Image::read(f).first
-  list &lt;&lt; "width: #{magick_image.columns}px\nheight: #{magick_image.rows}px\nbackground: url('../images/#{name}') no-repeat"
-end
+  echo ".${${f##*/}%.*}"
+  sips -g pixelWidth -g pixelHeight "$f" | grep pixel | \
+  sed -E 's/\ *pixel([A-Za-z]+)\:\ ([0-9]+)/  \1 \2px/' | \
+  tr '[:upper:]' '[:lower:]' | sed -E 's/width/width /'
+  echo "  background url('../images/${f##*/}')"
 
-puts list * "\n\n"</string>
+	MULTIPLE="yes"
+done
+
+osascript -e "display notification \"$(echo "${(@)files##*/}")\" with title \"Copy Dimensions as Stylus\" sound name \"Pop\""</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
 					<integer>1</integer>
 					<key>shell</key>
-					<string>/usr/bin/ruby</string>
+					<string>/bin/zsh</string>
 					<key>source</key>
 					<string></string>
 				</dict>
@@ -94,7 +98,7 @@ puts list * "\n\n"</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>8DE8AC51-557F-406A-ACB8-2DC449F86081</string>
+				<string>F5583E1A-DC82-4189-B7D9-69299BAF1F5F</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -104,9 +108,9 @@ puts list * "\n\n"</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>814CF207-1B3B-47F8-ACA2-4E9944DA0238</string>
+				<string>D8616F95-CF47-4717-A034-5FE85339AC3A</string>
 				<key>UUID</key>
-				<string>FF5358C6-95DD-4AE4-B922-B6B6AE425781</string>
+				<string>E0A18583-A3B3-47C4-88A8-993E42341206</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -182,7 +186,7 @@ puts list * "\n\n"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:550.000000</string>
+				<string>625.500000:253.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -243,15 +247,15 @@ puts list * "\n\n"</string>
 				<key>Class Name</key>
 				<string>AMCopyToClipboardAction</string>
 				<key>InputUUID</key>
-				<string>153DDB3F-7C14-431B-B2DE-B8738E6D7A90</string>
+				<string>86CAB02B-DD56-42A0-BD48-56044051D746</string>
 				<key>Keywords</key>
 				<array>
 					<string>Copy</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>FEB55629-B65A-4358-92B8-BDDB3D9B8B2E</string>
+				<string>A166504E-4404-44DE-8587-864A726A83A1</string>
 				<key>UUID</key>
-				<string>0095C1F2-EEF1-4BB9-9A87-8B4261F0F602</string>
+				<string>75AF9AE8-B9D8-4F3A-903B-FA61D661E3DB</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>System</string>
@@ -263,12 +267,12 @@ puts list * "\n\n"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>4C836232-45CE-4584-94E7-04DD21C497D2</key>
+		<key>80C152DF-D158-4B48-AB46-BD7153D14ED2</key>
 		<dict>
 			<key>from</key>
-			<string>FF5358C6-95DD-4AE4-B922-B6B6AE425781 - FF5358C6-95DD-4AE4-B922-B6B6AE425781</string>
+			<string>E0A18583-A3B3-47C4-88A8-993E42341206 - E0A18583-A3B3-47C4-88A8-993E42341206</string>
 			<key>to</key>
-			<string>0095C1F2-EEF1-4BB9-9A87-8B4261F0F602 - 0095C1F2-EEF1-4BB9-9A87-8B4261F0F602</string>
+			<string>75AF9AE8-B9D8-4F3A-903B-FA61D661E3DB - 75AF9AE8-B9D8-4F3A-903B-FA61D661E3DB</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>

@@ -1,18 +1,14 @@
 # Automator Services
 
-## Copy Image as Sass
+## Copy Dimensions as [Stylus](https://github.com/learnboost/stylus)
 
-Select any image on Finder and trigger this service to have a similar output copied to your clipboard:
+Select any number of images and trigger this service to have their dimensions and path copied to the clipboard, like so:
 
 ```
-width: 128px
-height: 128px
-background: url('../images/my_avatar.png')
+width 128px
+height 128px
+background url('../images/picture.png')
 ```
-
-Compatible with [Sass](https://github.com/nex3/sass) and [Stylus](https://github.com/learnboost/stylus) and [Styl](https://github.com/visionmedia/styl).
-
-**Note**: You need to have [ImageMagick](http://www.imagemagick.org) installed for this to work. You can install it with [Homebrew](http://brew.sh).
 
 
 ## Copy RTF as HTML

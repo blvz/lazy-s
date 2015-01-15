@@ -8,7 +8,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Copy Image as Sass</string>
+				<string>Copy Dimensions as Stylus</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
