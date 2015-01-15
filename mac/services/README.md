@@ -35,11 +35,6 @@ Select any number of images and trigger one of these services to get those dupli
 Trigger this service on Finder, to `cd` to the current selected directory. If no directory is selected, it'll `cd` to the active window's directory.
 
 
-## Open In Atom With Root
-
-The service will open the selected file and guess the root of the project, when opening it with Atom.
-
-
 ## Toggle Hidden Files
 
 With Finder opened, trigger this service to toggle hidden files visibility.
